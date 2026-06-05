@@ -163,18 +163,9 @@ private:
 	void generate_ts_aerodynamics();
 	void generate_rover_ackermann_dynamics(const float throttle_cmd, const float steering_cmd, const float dt);
 	void sensor_step();
-	static float computeGravity(double lat);
 
 	void ecefToNed();
 	static matrix::Dcmf computeRotEcefToNed(const LatLonAlt &lla);
-
-	struct Wgs84 {
-		static constexpr double equatorial_radius = 6378137.0;
-		static constexpr double eccentricity = 0.0818191908425;
-		static constexpr double eccentricity2 = eccentricity * eccentricity;
-		static constexpr double gravity_equator = 9.7803253359;
-	};
-
 
 #if defined(ENABLE_LOCKSTEP_SCHEDULER)
 	void lockstep_loop();
