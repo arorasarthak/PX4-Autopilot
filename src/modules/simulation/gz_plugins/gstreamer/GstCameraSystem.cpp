@@ -265,7 +265,7 @@ void GstCameraSystem::gstThreadFunc()
 	GstElement *encoder;
 
 	if (_useCuda) {
-		encoder = gst_element_factory_make("nvh264enc", nullptr);
+		encoder = gst_element_factory_make("nvautogpuh264enc", nullptr);
 
 		if (encoder) {
 			// Higher quality NVIDIA encoder settings
